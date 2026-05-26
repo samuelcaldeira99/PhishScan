@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishScan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #eee;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: #16213e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 600px;
+        }
+        h1 {
+            color: #00ff88;
+        }
+        textarea {
+            width: 100%;
+            background-color: #0f3460;
+            color: #eee;
+            border: 1px solid #00ff88;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        button {
+            margin-top: 15px;
+            background-color: #00ff88;
+            color: #1a1a2e;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #00cc6a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 PhishScan</h1>
+        <p>Cole o conteúdo do email abaixo:</p>
+        <form method="POST" action="/analisar">
+            <textarea name="email_texto" rows="12"></textarea>
+            <br>
+            <button type="submit">Analisar Email</button>
+        </form>
+    </div>
+</body>
+</html>

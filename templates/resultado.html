@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishScan - Resultado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #eee;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container {
+            background-color: #16213e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 600px;
+        }
+        h1 { color: #00ff88; }
+        .alerta { color: #ff4444; font-weight: bold; }
+        .seguro { color: #00ff88; font-weight: bold; }
+        .info { color: #ffaa00; }
+        .risco-alto { color: #ff4444; font-size: 24px; font-weight: bold; }
+        .risco-medio { color: #ffaa00; font-size: 24px; font-weight: bold; }
+        .risco-baixo { color: #00ff88; font-size: 24px; font-weight: bold; }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #00ff88;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Resultado da Análise</h1>
+
+        <p><b>Remetente:</b> {{ remetente }}</p>
+
+        <p><b>Palavras suspeitas no assunto:</b>
+            {% if resultado_assunto %}
+                <span class="alerta">{{ resultado_assunto }}</span>
+            {% else %}
+                <span class="seguro">Nenhuma</span>
+            {% endif %}
+        </p>
+
+        <p><b>Palavras suspeitas no corpo:</b>
+            {% if resultado_corpo %}
+                <span class="alerta">{{ resultado_corpo }}</span>
+            {% else %}
+                <span class="seguro">Nenhuma</span>
+            {% endif %}
+        </p>
+
+        <p><b>Links suspeitos:</b>
+            {% if links_suspeitos %}
+                <span class="alerta">{{ links_suspeitos }}</span>
+            {% else %}
+                <span class="seguro">Nenhum</span>
+            {% endif %}
+        </p>
+
+        <p><b>Pontuação:</b> <span class="info">{{ pontuacao }}</span></p>
+
+        <p><b>Risco:</b>
+            <span class="risco-{{ risco|lower }}">{{ risco }}</span>
+        </p>
+
+        <a href="/">← Analisar outro email</a>
+    </div>
+</body>
+</html>

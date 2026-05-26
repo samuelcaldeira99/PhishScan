@@ -1,0 +1,8 @@
+=== RELATORIO DE ANALISE ===
+Data: 22/05/2026 00:20:14
+Remetente: seguranca@bradesco-seguro.xyz
+Assunto: Sua conta foi bloqueada! Clique aqui urgente
+Palavras suspeitas no assunto: ['urgente', 'bloqueada', 'clique aqui']
+Palavras suspeitas no corpo: ['bloqueada', 'clique aqui', 'acesse agora']
+Pontuacao: 40
+Risco: ALTO
